@@ -1,7 +1,8 @@
-package com.studio.project
+package com.studio.project.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.studio.project.R
 
 class MainActivity : AppCompatActivity() {
 
