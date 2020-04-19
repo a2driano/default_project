@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_alert_dialog"
+        android:orientation="vertical"
+        android:paddingTop="30dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:lineSpacingExtra="8sp"
+            android:textSize="20sp"
+            tools:text="Title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="16sp"
+            tools:text="This is dialog body. Main text. And so on" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rel_btn_second"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/back_btn_re4_rect4_transp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_btn_second_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:letterSpacing="-0.01"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    tools:text="Cancel" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_btn_first"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/back_btn_re4_rect4_transp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_btn_first_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:letterSpacing="-0.01"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    tools:text="Delete" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -3,4 +3,14 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+    <!--  colors for ripple effect  -->
+    <color name="colorRippleEffect1">#55000000</color>
+    <color name="colorRippleEffect2">#77000000</color>
+    <color name="colorRippleEffect3">#33000000</color>
+    <color name="colorRippleEffect4">#22000000</color>
+    <color name="colorRippleEffect5">#77ffffff</color>
 </resources>
