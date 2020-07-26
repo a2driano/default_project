@@ -6,6 +6,8 @@
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorRed">#DB1C1C</color>
+    <color name="colorGreyStatusBar">#D8D7D7</color>
 
     <!--  colors for ripple effect  -->
     <color name="colorRippleEffect1">#55000000</color>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_size">16dp</dimen>
+    <dimen name="radius_button">3dp</dimen>
+    <dimen name="radius_button_big">6dp</dimen>
+    <dimen name="range_seekbar_height">50dp</dimen>
+    <dimen name="size_64">64dp</dimen>
+    <dimen name="size_48">48dp</dimen>
+    <dimen name="size_32">32dp</dimen>
+    <dimen name="size_24">24dp</dimen>
+    <dimen name="size_28">28dp</dimen>
+    <dimen name="size_16">16dp</dimen>
+    <dimen name="size_12">12dp</dimen>
+    <dimen name="size_8">8dp</dimen>
+    <dimen name="size_4">4dp</dimen>
+    <dimen name="size_2">2dp</dimen>
+    <dimen name="size_1">1dp</dimen>
+    <dimen name="bottom_layout_size">85dp</dimen>
+    <dimen name="size_86">86dp</dimen>
+    <dimen name="bottom_navigation_layout_size">72dp</dimen>
+    <dimen name="bottom_layout_additional">110dp</dimen>
+    <dimen name="stroke_width">1dp</dimen>
+    <dimen name="radio_width">45dp</dimen>
+    <dimen name="radio_height">35dp</dimen>
+    <dimen name="line_dot_margin">17dp</dimen>
+    <dimen name="btn_ar_size">42dp</dimen>
+    <dimen name="btn_add_point">50dp</dimen>
+    <dimen name="btn_ar_size_active">58dp</dimen>
+    <dimen name="toolbar_height">90dp</dimen>
+    <dimen name="toolbar_white_height">56dp</dimen>
+    <dimen name="bottom_nav_icon_size">24dp</dimen>
+    <dimen name="bottom_nav_selected_icon_size">28dp</dimen>
+    <dimen name="size_80">80dp</dimen>
+    <dimen name="elevation_size">3dp</dimen>
+</resources>

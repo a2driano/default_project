@@ -42,7 +42,7 @@
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:id="@+id/rel_btn_second"
+                android:id="@+id/btn_negative"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:background="@drawable/back_btn_re4_rect4_transp"
@@ -50,7 +50,7 @@
                 android:focusable="true">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_btn_second_text"
+                    android:id="@+id/text_btn_negative"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -64,7 +64,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/rel_btn_first"
+                android:id="@+id/btn_neutral"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:background="@drawable/back_btn_re4_rect4_transp"
@@ -72,7 +72,29 @@
                 android:focusable="true">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_btn_first_text"
+                    android:id="@+id/text_btn_neutral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:letterSpacing="-0.01"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    tools:text="Neutral" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_positive"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/back_btn_re4_rect4_transp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_btn_positive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"

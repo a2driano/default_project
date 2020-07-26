@@ -11,30 +11,40 @@ class DialogCustom : BaseDialog() {
 
     private var title: String? = null
     private var body: String? = null
-    private var rightButtonText: String? = null
-    private var leftButtonText: String? = null
-    private var rightCallback: (() -> Unit)? = {}
-    private var leftCallback: (() -> Unit)? = {}
+    private var buttonPositiveText: String? = null
+    private var buttonNegativeText: String? = null
+    private var buttonNeutralText: String? = null
+    private var buttonPositiveCallback: (() -> Unit)? = {}
+    private var buttonNegativeCallback: (() -> Unit)? = {}
+    private var buttonNeutralCallback: (() -> Unit)? = {}
     private var isCancelable: Boolean = false
     private var dismissAfterClick: Boolean = true
 
     fun title(t: String?) = apply { title = t }
     fun body(b: String?) = apply { body = b }
-    fun rightButtonText(txt: String?) = apply { rightButtonText = txt }
-    fun leftButtonText(txt: String?) = apply { leftButtonText = txt }
-    fun rightButtonCallback(call: (() -> Unit)) = apply { rightCallback = call }
-    fun leftButtonCallback(call: (() -> Unit)) = apply { leftCallback = call }
-    fun onlyRightButton() = apply { leftCallback = null }
+    fun buttonPositiveText(txt: String?) = apply { buttonPositiveText = txt }
+    fun buttonNegativeText(txt: String?) = apply { buttonNegativeText = txt }
+    fun buttonNeutralText(txt: String?) = apply { buttonNeutralText = txt }
+    fun buttonPositiveCallback(call: (() -> Unit)) = apply { buttonPositiveCallback = call }
+    fun buttonNegativeCallback(call: (() -> Unit)) = apply { buttonNegativeCallback = call }
+    fun buttonNeutralCallback(call: (() -> Unit)) = apply { buttonNeutralCallback = call }
+    fun oneButton() = apply {
+        buttonNegativeCallback = null
+        buttonNeutralCallback = null
+    }
+    fun twoButton() = apply {
+        buttonNeutralCallback = null
+    }
     fun isCancelable(c: Boolean) = apply { isCancelable = c }
     fun doNotDismissWhenClick() = apply { dismissAfterClick = false }
 
     fun build(activity: Context): Dialog {
 
-        if (rightButtonText == null || rightButtonText?.length == 0) {
-            rightButtonText = activity.getString(R.string.str_ok)
+        if (buttonPositiveText == null || buttonPositiveText?.length == 0) {
+            buttonPositiveText = activity.getString(R.string.str_ok)
         }
-        if (leftButtonText == null || leftButtonText?.length == 0) {
-            leftButtonText = activity.getString(R.string.str_cancel)
+        if (buttonNegativeText == null || buttonNegativeText?.length == 0) {
+            buttonNegativeText = activity.getString(R.string.str_cancel)
         }
         return buildDialog(activity)
     }
@@ -47,10 +57,8 @@ class DialogCustom : BaseDialog() {
             dialog.tv_title.gone()
             dialog.tv_body.text = activityContext.getString(R.string.error_something_went_wrong)
             dialog.tv_body.visible()
-
         } else if (title == null || title!!.isEmpty()) {
             dialog.tv_title.gone()
-
         } else if (body == null || body!!.isEmpty()) {
             dialog.tv_body.gone()
         }
@@ -63,35 +71,47 @@ class DialogCustom : BaseDialog() {
             dialog.tv_body.text = b
         }
 
-        if (leftCallback == null) {
-            dialog.rel_btn_second.gone()
-
+        if (buttonNegativeCallback == null) {
+            dialog.btn_negative.gone()
         } else {
-            dialog.rel_btn_second.setOnClickListener {
-                leftCallback!!()
-
+            dialog.btn_negative.setOnClickListener {
+                buttonNegativeCallback!!()
                 if (dismissAfterClick) {
                     dialog.dismiss()
                 }
             }
         }
 
-        dialog.rel_btn_first.setOnClickListener {
-            if (rightCallback != null) {
-                rightCallback!!()
+        if (buttonNeutralCallback == null) {
+            dialog.btn_neutral.gone()
+        } else {
+            dialog.btn_neutral.setOnClickListener {
+                buttonNeutralCallback!!()
+                if (dismissAfterClick) {
+                    dialog.dismiss()
+                }
             }
+        }
 
+        dialog.btn_positive.setOnClickListener {
+            if (buttonPositiveCallback != null) {
+                buttonPositiveCallback!!()
+            }
             if (dismissAfterClick) {
                 dialog.dismiss()
             }
         }
 
-        rightButtonText?.let { t ->
-            dialog.tv_btn_first_text.text = t
+        buttonPositiveText?.let { t ->
+            dialog.text_btn_positive.text = t
         }
 
-        leftButtonText?.let { t ->
-            dialog.tv_btn_second_text.text = t
+        buttonNeutralText?.let { t ->
+            dialog.text_btn_neutral.text = t
+        }
+
+        buttonNegativeText?.let { t ->
+            dialog.text_btn_negative.text = t
         }
 
         return dialog

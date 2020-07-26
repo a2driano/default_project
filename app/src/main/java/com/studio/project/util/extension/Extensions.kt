@@ -19,14 +19,13 @@ import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.interpolator.view.animation.FastOutLinearInInterpolator
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import androidx.transition.Transition
 import androidx.transition.TransitionManager
 import com.bumptech.glide.Glide
@@ -789,4 +788,12 @@ fun View.translateOutToRight(
         this.visibility = View.GONE
         this.startAnimation(slide)
     }
+}
+
+inline fun <reified T : ViewModel> AppCompatActivity.injectViewModel(factory: ViewModelProvider.Factory): T {
+    return ViewModelProvider(this, factory)[T::class.java]
+}
+
+inline fun <reified T : ViewModel> Fragment.injectViewModel(factory: ViewModelProvider.Factory): T {
+    return ViewModelProvider(this, factory)[T::class.java]
 }
